@@ -7,3 +7,5 @@ Concept : https://deepstatemap.live has an amount of occupied territory divided 
 
 How DO?
 <img width="1080" alt="image" src="https://github.com/akademsubotnik/PercentOfUATerritoryUnderRU/assets/44036625/c5fbd3af-6ec0-4786-ad96-80a63504f44d">
+
+https://stackoverflow.com/questions/11804148/parsing-html-to-get-text-inside-an-element ???
