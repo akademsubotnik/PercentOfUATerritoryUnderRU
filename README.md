@@ -10,3 +10,7 @@ How DO?
 
 https://stackoverflow.com/questions/11804148/parsing-html-to-get-text-inside-an-element ???
 https://stackoverflow.com/questions/53973423/getting-value-after-button-click-with-beautifulsoup-python
+
+Steps to run 
+  1. Install needed, $pip install selenium / you may need to install beautiful soup as well, google it ;)
+  2. 
