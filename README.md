@@ -10,7 +10,8 @@ How DO?
 
 https://stackoverflow.com/questions/11804148/parsing-html-to-get-text-inside-an-element ???
 https://stackoverflow.com/questions/53973423/getting-value-after-button-click-with-beautifulsoup-python
+https://stackoverflow.com/questions/23050885/how-to-change-the-style-of-an-element-using-selenium <-- it may be better to use javascript than selenium
 
 Steps to run 
-  1. Install needed, $pip install selenium / you may need to install beautiful soup as well, google it ;)
+  1. 
   2. 
