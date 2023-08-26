@@ -1,13 +1,36 @@
 import os
 import time
+
+#Selenium Imports
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 # #from selenium.webdriver import Keys
 # #from selenium.webdriver.common.by import By
+
+#Class imports
 from class_functions import Fnxn
 
+service = Service(executable_path=r'/workspaces/PercentOfUATerritoryUnderRU/chromedriver-linux64/chromedriver')
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
 
-f1 = Fnxn()
-driver = webdriver.Chrome()
+
+
+CHROMEDRIVER_PATH = "/workspaces/PercentOfUATerritoryUnderRU/chromedriver-linux64"
+
+driver = webdriver.Chrome(service=service, options=options)
+driver.get("https://www.example.com")
+html = driver.page_source
+time.sleep(2)
+print(html)
+driver.quit()
+
+
+
+#f1 = Fnxn()
+#driver = webdriver.Chrome()
 
 # driver = f1.setup()
 # driver = f1.popups(driver)
