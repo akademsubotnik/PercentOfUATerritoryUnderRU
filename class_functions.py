@@ -1,3 +1,4 @@
+"""module to show percent of UA land occupied by RU"""
 import os
 import time
 from selenium import webdriver
@@ -5,8 +6,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 class Fnxn:
-
+    """class to show percent of UA land occupied by RU"""
     def setup(self):
+        """function to create webdriver"""
         chrome_options = Options()
         chrome_options.add_argument("--start-maximized")
         chrome_options.add_argument("disable-infobars")
@@ -18,6 +20,7 @@ class Fnxn:
         return driver
 
     def popups(self, driver):
+        """function to close popups"""
             # popups
         try:
             driver.implicitly_wait(3)  # wait until element loads (timeout 3 seconds)
