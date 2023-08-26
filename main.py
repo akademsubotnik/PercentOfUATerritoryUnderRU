@@ -3,21 +3,11 @@ import time
 from selenium import webdriver
 # #from selenium.webdriver import Keys
 # #from selenium.webdriver.common.by import By
-# from class_functions import Fnxn
+from class_functions import Fnxn
 
 
-from chromedriver_py import binary_path # this will get you the path variable
-
-svc = webdriver.ChromeService(executable_path=binary_path)
-driver = webdriver.Chrome(service=svc)
-
-# deprecated but works in older selenium versions
-# driver = webdriver.Chrome(executable_path=binary_path)
-driver.get("http://www.python.org")
-assert "Python" in driver.title
-
-# f1 = Fnxn()
-
+f1 = Fnxn()
+driver = webdriver.Chrome()
 
 # driver = f1.setup()
 # driver = f1.popups(driver)
