@@ -15,14 +15,9 @@ class Fnxn:
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
-        #os.environ['PATH'] += r"C:\Users\Chuwi\PycharmProjects\UaRu\chromedriver_win32\chromedriver"
         service = Service(executable_path=r'/workspaces/PercentOfUATerritoryUnderRU/chromedriver-linux64/chromedriver')
         driver = webdriver.Chrome(service=service, options=options)
         driver.get("https://deepstatemap.live/")
-        html = driver.page_source
-        time.sleep(2)
-        print(html)
-        driver.quit()
         return driver
 
     def popups(self, driver):
@@ -36,6 +31,6 @@ class Fnxn:
             rules = driver.find_element("xpath", "/html/body/div[1]/div/div[2]/button[2]")
             rules.click()
             driver.implicitly_wait(3)  # wait until element loads (timeout 3 seconds)
-        except:
+        except Exception:
             print('No element found.  Skipping')
         return driver

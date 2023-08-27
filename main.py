@@ -10,13 +10,12 @@ from selenium.webdriver.chrome.service import Service
 #Class imports
 from class_functions import Fnxn
 
-
-
 f1 = Fnxn()
-#driver = webdriver.Chrome()
 
 driver = f1.setup()
-# driver = f1.popups(driver)
+driver = f1.popups(driver)
+
+
 
 # #map
 # ot1 = driver.find_element("xpath", '//*[@id="map"]')
