@@ -4,19 +4,25 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
 class Fnxn:
     """class to show percent of UA land occupied by RU"""
     def setup(self):
         """function to create webdriver"""
-        chrome_options = Options()
-        chrome_options.add_argument("--start-maximized")
-        chrome_options.add_argument("disable-infobars")
-        chrome_options.add_argument("--disable-notifications")
-        chrome_options.add_argument("--auto-open-devtools-for-tabs")
-        os.environ['PATH'] += r"C:\Users\Chuwi\PycharmProjects\UaRu\chromedriver_win32\chromedriver"
-        driver = webdriver.Chrome(chrome_options)
+        #chrome_options = Options()
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        #os.environ['PATH'] += r"C:\Users\Chuwi\PycharmProjects\UaRu\chromedriver_win32\chromedriver"
+        service = Service(executable_path=r'/workspaces/PercentOfUATerritoryUnderRU/chromedriver-linux64/chromedriver')
+        driver = webdriver.Chrome(service=service, options=options)
         driver.get("https://deepstatemap.live/")
+        html = driver.page_source
+        time.sleep(2)
+        print(html)
+        driver.quit()
         return driver
 
     def popups(self, driver):
