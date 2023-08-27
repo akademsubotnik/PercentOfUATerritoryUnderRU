@@ -10,7 +10,6 @@ class Fnxn:
     """class to show percent of UA land occupied by RU"""
     def setup_githubcodespaces(self):
         """function to create webdriver"""
-        #chrome_options = Options()
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
@@ -22,9 +21,9 @@ class Fnxn:
     
     def setup_localvscode(self):
         """function to create webdriver"""
-        #chrome_options = Options()
         options = webdriver.ChromeOptions()
         #options.add_argument('--headless')
+        options.add_argument('--start-fullscreen')
         options.add_argument('--no-sandbox')
         #options.add_argument('--disable-dev-shm-usage')
         service = Service(executable_path=r'/home/greg/prog/PercentOfUATerritoryUnderRU/chromedriver-linux64/chromedriver')

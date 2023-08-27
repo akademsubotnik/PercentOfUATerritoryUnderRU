@@ -16,53 +16,39 @@ f1 = Fnxn()
 driver = f1.setup_localvscode()
 driver = f1.popups(driver)
 
-time.sleep(10)
 
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+el=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[119]")
+action = webdriver.common.action_chains.ActionChains(driver)
+action.move_to_element_with_offset(el, 0, -20)
+#action.move_by_offset(1200,400) #x left side to right side is ~2000 px , #y from bottom to top is ~1300
+action.click()
+action.perform()
 
-#I would like to pass "style="opacity: 1; transform: translate3d(1201px, 442px, 0px); bottom: -7px; left: -74px;"" to the click.
-#opacity: 1; transform: translate3d(1284px, 499px, 0px); bottom: -7px; left: -80px;
-
-ot1 = driver.find_element("xpath", '/html/body/div[9]/div[1]/div[6]')
-#driver.execute_script("arguments[0].setAttribute('style', 'opacity: 1; transform: translate3d(1284px, 499px, 0px); bottom: -7px; left: -80px;').click();", ot1)
-#driver.execute_script("$('#emailItinerarySuccessModal .indigo-submit').click();", ot1)
-js = driver.execute_script
-js("arguments[0].setAttribute('style', 'opacity: 1; transform: translate3d(1284px, 499px, 0px); bottom: -7px; left: -80px;')", ot1)
-#print(ot1.children)
-
-#driver.execute_script("document.getElementsByClassName('comment-user')[0].click()")
-#ot1.click()
+ot1 = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
+print(ot1.text)
+time.sleep(50)
 
 
+#    -x+y | +x+y
+#    =============   
+#    -x-y | +x-y
+#         |
+#https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
+# move_by_offset(xoffset, yoffset)
+# Moving the mouse to an offset from current mouse position.
 
-# Execute JavaScript to set attribute style
-# js = driver.execute_script
-# element1 = driver.find_element(By.XPATH, "//div[contains(@class,'rmSlide')]")
-# js("arguments[0].setAttribute('style', 'visibility: visible; height: 259px; width: 339px; display: block; overflow: hidden; left: -81px; top: 24px; z - index: 2; ')", element1)
+# Args:	
+# xoffset: X offset to move to, as a positive or negative integer.
+# yoffset: Y offset to move to, as a positive or negative integer.
+# move_to_element(to_element)
+# Moving the mouse to the middle of an element.
 
+# Args:	
+# to_element: The WebElement to move to.
+# move_to_element_with_offset(to_element, xoffset, yoffset)
+# Move the mouse by an offset of the specified element. Offsets are relative to the in-view center point of the element.
 
-
-
-
-# #map
-# ot1 = driver.find_element("xpath", '//*[@id="map"]')
-# ot1.click()
-# #print(zapor.text)
-# driver.implicitly_wait(3) #wait until element loads (timeout 3 seconds)
-# time.sleep(100) #sleep for 1 sec
-
-# #driver.find_element(By.CLASS_NAME, "leaflet-zoom-animated".style.opacity = '0';)
-# #driver.execute_script("document.getElementByClassName('leaflet-zoom-animated').style.opacity = '0';")
-# driver.find_element(By.XPATH, "/html/body").send_keys(Keys.TAB)
-# driver.find_element(By.XPATH, "/html/body").send_keys(Keys.TAB)
-# driver.find_element(By.XPATH, "/html/body").send_keys(Keys.F12)
-# driver.find_element(By.XPATH, "/html/body").send_keys(Keys.TAB)
-# driver.find_element(By.XPATH, "/html/body").send_keys(Keys.TAB)
-# driver.find_element(By.XPATH, "/html/body").send_keys(Keys.TAB)
-# driver.find_element(By.XPATH, "/html/body").send_keys(Keys.TAB)
-# driver.find_element(By.XPATH, "/html/body").send_keys(Keys.ENTER)
-# time.sleep(5)
-
-
-
-#click an area on the map by coordiantes for each OT???
+# Args:	
+# to_element: The WebElement to move to.
+# xoffset: X offset to move to, as a positive or negative integer.
+# yoffset: Y offset to move to, as a positive or negative integer.
