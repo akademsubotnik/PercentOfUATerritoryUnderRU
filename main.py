@@ -13,8 +13,10 @@ from class_functions import Fnxn
 
 f1 = Fnxn()
 
-driver = f1.setup_githubcodespaces()
+driver = f1.setup_localvscode()
 driver = f1.popups(driver)
+
+time.sleep(10)
 
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
@@ -26,7 +28,7 @@ ot1 = driver.find_element("xpath", '/html/body/div[9]/div[1]/div[6]')
 #driver.execute_script("$('#emailItinerarySuccessModal .indigo-submit').click();", ot1)
 js = driver.execute_script
 js("arguments[0].setAttribute('style', 'opacity: 1; transform: translate3d(1284px, 499px, 0px); bottom: -7px; left: -80px;')", ot1)
-print(ot1.children)
+#print(ot1.children)
 
 #driver.execute_script("document.getElementsByClassName('comment-user')[0].click()")
 #ot1.click()
