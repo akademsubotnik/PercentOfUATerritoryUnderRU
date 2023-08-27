@@ -28,7 +28,7 @@ action.click()
 action.perform()
 ot1_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
 print(ot1_size.text)
-donetsk_ot = ot1_size
+donetsk_ot = ot1_size.text
 #close it!
 close_1=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
 action.move_to_element_with_offset(close_1, 0, 0)
@@ -45,7 +45,7 @@ action.click()
 action.perform()
 ot2_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
 print(ot2_size.text)
-lugansk_ot = ot2_size
+lugansk_ot = ot2_size.text
 #close it!
 close_2=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
 action.move_to_element_with_offset(close_2, 0, 0)
@@ -60,26 +60,33 @@ action.move_to_element_with_offset(ot3, 20, 0)
 action.click()
 action.perform()
 ot3_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
+
 print(ot3_size.text)
-zaporozye_ot = ot3_size
+zaporozye_ot = ot3_size.text
+#print(type(str(zaporozye_ot)))
 #close it!
 close_3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
 action.move_to_element_with_offset(close_3, 0, 0)
 action.click()
 action.perform()
 
-print(str(donetsk_ot) + str(lugansk_ot) + str(zaporozye_ot))
-#[int(s) for s in txt.split() if s.isdigit()]
 
-#lugansk_ot = re.findall(r'\d+', str(ot1_size))
-#donetsk_ot = re.findall(r'\d+', str(ot2_size))
-#zaporozye_ot = re.findall(r'\d+', str(ot3_size))
+donot = donetsk_ot.split()
+print(donot[1])
 
-#total_occupied = lugansk_ot + donetsk_ot + zaporozye_ot
-#print(total_occupied)
-#total_size = 576700
+logot = lugansk_ot.split()
+print(logot[1])
 
-percent_occupied = "a"
+zapot = zaporozye_ot.split()
+print(zapot[1])
 
-time.sleep(50)
+
+total_occupied = float(donot[1]) + float(logot[1]) + float(zapot[1])
+print(total_occupied)
+total_size = 576700.00
+
+percent_occupied = (total_occupied / total_size) * 100
+print("Percent Occupied: " + str(percent_occupied) + "%")
+
+time.sleep(10)
 
