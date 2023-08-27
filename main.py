@@ -1,3 +1,4 @@
+"""main.py"""
 import os
 import time
 
@@ -14,6 +15,30 @@ f1 = Fnxn()
 
 driver = f1.setup()
 driver = f1.popups(driver)
+
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+#I would like to pass "style="opacity: 1; transform: translate3d(1201px, 442px, 0px); bottom: -7px; left: -74px;"" to the click.
+#opacity: 1; transform: translate3d(1284px, 499px, 0px); bottom: -7px; left: -80px;
+
+ot1 = driver.find_element("xpath", '/html/body/div[9]/div[1]/div[6]')
+#driver.execute_script("arguments[0].setAttribute('style', 'opacity: 1; transform: translate3d(1284px, 499px, 0px); bottom: -7px; left: -80px;').click();", ot1)
+#driver.execute_script("$('#emailItinerarySuccessModal .indigo-submit').click();", ot1)
+js = driver.execute_script
+js("arguments[0].setAttribute('style', 'opacity: 1; transform: translate3d(1284px, 499px, 0px); bottom: -7px; left: -80px;')", ot1)
+print(ot1.children)
+
+#driver.execute_script("document.getElementsByClassName('comment-user')[0].click()")
+#ot1.click()
+
+
+
+# Execute JavaScript to set attribute style
+# js = driver.execute_script
+# element1 = driver.find_element(By.XPATH, "//div[contains(@class,'rmSlide')]")
+# js("arguments[0].setAttribute('style', 'visibility: visible; height: 259px; width: 339px; display: block; overflow: hidden; left: -81px; top: 24px; z - index: 2; ')", element1)
+
+
 
 
 
