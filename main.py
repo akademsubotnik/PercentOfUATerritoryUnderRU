@@ -13,7 +13,7 @@ from class_functions import Fnxn
 
 f1 = Fnxn()
 
-driver = f1.setup()
+driver = f1.setup_githubcodespaces()
 driver = f1.popups(driver)
 
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
