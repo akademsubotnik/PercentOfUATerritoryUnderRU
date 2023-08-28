@@ -17,6 +17,7 @@ You can follow this site to run locally
 Docker image : docker pull akademsubotnik/ruoccupyua
 
 TODO: Pin version of chrome to be v116.0.5485.96 in DOCKERFILE!!!
+TODO: Add some github actions to this repo!!!
 
 USEFUL PAGES:
 https://stackoverflow.com/questions/76428561/typeerror-webdriver-init-got-multiple-values-for-argument-options
