@@ -14,6 +14,7 @@ You can follow this site to run locally
   4. $pip install -r requirements.txt
   5. $python3 main.py
 
+Docker image : docker pull akademsubotnik/ruoccupyua
 
 USEFUL PAGES:
 https://stackoverflow.com/questions/76428561/typeerror-webdriver-init-got-multiple-values-for-argument-options
