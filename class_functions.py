@@ -33,3 +33,63 @@ class Fnxn:
         except Exception:
             print('No element found.  Skipping')
         return driver
+
+    def donetsk_ot(self, driver) -> str:
+        """"Get OT for Donetsk Region"""
+        #Gets occupied territory Donetsk 1
+        ot1=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[151]")#Donetsk city
+        action = webdriver.common.action_chains.ActionChains(driver)
+        action.move_to_element_with_offset(ot1, 20, 0)
+        action.click()
+        action.perform()
+        ot1_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
+        print(ot1_size.text)
+        donetsk_ot = ot1_size.text
+        time.sleep(1)
+        #close it!
+        close_1=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
+        action.move_to_element_with_offset(close_1, 0, 0)
+        action.click()
+        action.perform()
+        time.sleep(1)
+        return donetsk_ot
+
+    def lugansk_ot(self, driver) -> str:
+        """"Get OT for Lugansk Region"""
+        #Gets occupied territory Lugansk 1
+        ot2=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[84]")#starobilsk(Lugansk)
+        action = webdriver.common.action_chains.ActionChains(driver)
+        action.move_to_element_with_offset(ot2, 0, 20)
+        action.click()
+        action.perform()
+        ot2_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
+        print(ot2_size.text)
+        lugansk_ot = ot2_size.text
+        time.sleep(1)
+        #close it!
+        close_2=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
+        action.move_to_element_with_offset(close_2, 0, 0)
+        action.click()
+        action.perform()
+        time.sleep(1)
+        return lugansk_ot
+    
+    def zaporozye_ot(self, driver) -> str:
+        """"Get OT for Zaporozye Region"""
+        #Gets occupied territory Zaporozye 1
+        ot3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[169]")#melitopol(Zaporozye)
+        action = webdriver.common.action_chains.ActionChains(driver)
+        action.move_to_element_with_offset(ot3, 20, 0)
+        action.click()
+        action.perform()
+        ot3_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
+        print(ot3_size.text)
+        zaporozye_ot = ot3_size.text
+        time.sleep(1)
+        #close it!
+        close_3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
+        action.move_to_element_with_offset(close_3, 0, 0)
+        action.click()
+        action.perform()
+        time.sleep(1)
+        return zaporozye_ot
