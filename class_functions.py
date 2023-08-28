@@ -2,8 +2,6 @@
 import os
 import time
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
 class Fnxn:
@@ -73,7 +71,7 @@ class Fnxn:
         action.perform()
         time.sleep(1)
         return lugansk_ot
-    
+
     def zaporozye_ot(self, driver) -> str:
         """"Get OT for Zaporozye Region"""
         #Gets occupied territory Zaporozye 1
