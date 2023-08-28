@@ -26,7 +26,7 @@ class Fnxn:
         options.add_argument('--start-fullscreen')
         options.add_argument('--no-sandbox')
         #options.add_argument('--disable-dev-shm-usage')
-        service = Service(executable_path=r'/home/greg/prog/PercentOfUATerritoryUnderRU/chromedriver-linux64/chromedriver')
+        service = Service(executable_path=r'chromedriver-linux64/chromedriver')
         driver = webdriver.Chrome(service=service, options=options)
         driver.get("https://deepstatemap.live/")
         return driver
