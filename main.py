@@ -16,7 +16,7 @@ import re
 
 f1 = Fnxn()
 
-driver = f1.setup_localvscode()
+driver = f1.setup_githubcodespaces()
 driver = f1.popups(driver)
 
 
