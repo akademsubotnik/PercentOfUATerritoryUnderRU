@@ -23,9 +23,9 @@ class Fnxn:
         """function to create webdriver"""
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
-        options.add_argument('--start-fullscreen')
+        #options.add_argument('--start-fullscreen')
         options.add_argument('--no-sandbox')
-        #options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--disable-dev-shm-usage')
         service = Service(executable_path=r'chromedriver-linux64/chromedriver')
         driver = webdriver.Chrome(service=service, options=options)
         driver.get("https://deepstatemap.live/")
