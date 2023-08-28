@@ -43,8 +43,8 @@ class Fnxn:
         action.click()
         action.perform()
         ot1_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
-        print(ot1_size.text)
         donetsk_ot = ot1_size.text
+        print(f"Donetsk OT: {donetsk_ot}")
         time.sleep(1)
         #close it!
         close_1=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
@@ -63,8 +63,8 @@ class Fnxn:
         action.click()
         action.perform()
         ot2_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
-        print(ot2_size.text)
         lugansk_ot = ot2_size.text
+        print(f"Lugansk OT: {lugansk_ot}")
         time.sleep(1)
         #close it!
         close_2=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
@@ -83,8 +83,8 @@ class Fnxn:
         action.click()
         action.perform()
         ot3_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
-        print(ot3_size.text)
         zaporozye_ot = ot3_size.text
+        print(f"Zaporozye OT: {zaporozye_ot}")
         time.sleep(1)
         #close it!
         close_3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
