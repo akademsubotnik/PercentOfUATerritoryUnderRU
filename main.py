@@ -16,9 +16,10 @@ import re
 
 f1 = Fnxn()
 
-driver = f1.setup_githubcodespaces()
+driver = f1.setup()
 driver = f1.popups(driver)
 
+time.sleep(10)
 
 #Gets occupied territory Donetsk 1
 ot1=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[151]")#Donetsk city
@@ -52,6 +53,7 @@ action.move_to_element_with_offset(close_2, 0, 0)
 action.click()
 action.perform()
 
+time.sleep(10)
 
 #Gets occupied territory Zaporozye 1
 ot3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[169]")#melitopol(Zaporozye)
@@ -70,6 +72,7 @@ action.move_to_element_with_offset(close_3, 0, 0)
 action.click()
 action.perform()
 
+time.sleep(10)
 
 donot = donetsk_ot.split()
 print(donot[1])

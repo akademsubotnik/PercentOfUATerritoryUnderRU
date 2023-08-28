@@ -7,23 +7,11 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
 class Fnxn:
-    """class to show percent of UA land occupied by RU"""
-    def setup_githubcodespaces(self):
+    """class to show percent of UA land occupied by RU"""    
+    def setup(self):
         """function to create webdriver"""
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
-        service = Service(executable_path=r'chromedriver-linux64/chromedriver')
-        driver = webdriver.Chrome(service=service, options=options)
-        driver.get("https://deepstatemap.live/")
-        return driver
-    
-    def setup_localvscode(self):
-        """function to create webdriver"""
-        options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
-        #options.add_argument('--start-fullscreen')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         service = Service(executable_path=r'chromedriver-linux64/chromedriver')
