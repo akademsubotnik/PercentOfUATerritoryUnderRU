@@ -1,18 +1,11 @@
 """main.py"""
-import os
 import time
 
 #Selenium Imports
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-# #from selenium.webdriver import Keys
-# #from selenium.webdriver.common.by import By
 
 #Class imports
 from class_functions import Fnxn
-
-#to get number
-import re
 
 f1 = Fnxn()
 
@@ -30,6 +23,7 @@ action.perform()
 ot1_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
 print(ot1_size.text)
 donetsk_ot = ot1_size.text
+time.sleep(1)
 #close it!
 close_1=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
 action.move_to_element_with_offset(close_1, 0, 0)
@@ -47,6 +41,7 @@ action.perform()
 ot2_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
 print(ot2_size.text)
 lugansk_ot = ot2_size.text
+time.sleep(1)
 #close it!
 close_2=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
 action.move_to_element_with_offset(close_2, 0, 0)
@@ -62,10 +57,9 @@ action.move_to_element_with_offset(ot3, 20, 0)
 action.click()
 action.perform()
 ot3_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
-
 print(ot3_size.text)
 zaporozye_ot = ot3_size.text
-#print(type(str(zaporozye_ot)))
+time.sleep(1)
 #close it!
 close_3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
 action.move_to_element_with_offset(close_3, 0, 0)
