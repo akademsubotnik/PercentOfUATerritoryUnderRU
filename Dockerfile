@@ -49,7 +49,7 @@ USER appuser
 COPY . .
 
 # Expose the port that the application listens on.
-EXPOSE 8000
+#EXPOSE 8000 -- NOT NEEDED
 
 # Run the application.
 CMD python3 main.py
