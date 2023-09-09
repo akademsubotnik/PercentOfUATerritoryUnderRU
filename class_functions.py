@@ -7,7 +7,7 @@ from selenium.webdriver.common.actions.action_builder import ActionBuilder
 from typing import Final
 
 site_name: Final = "https://deepstatemap.live/"
-sn: Final = "https://wikipedia.com/wiki/Main_Page"
+#sn: Final = "https://wikipedia.com/wiki/Main_Page"
 
 class Fnxn:
     """class to show percent of UA land occupied by RU"""    
@@ -21,7 +21,7 @@ class Fnxn:
         #options.add_argument('--kiosk')
         service = Service(executable_path=r'chromedriver-linux64/chromedriver')
         driver = webdriver.Chrome(service=service, options=options)
-        driver.get(sn)
+        driver.get('https://deepstatemap.live/')
         return driver
 
     def popups(self, driver):
@@ -107,7 +107,7 @@ class Fnxn:
         
         #Move by offset
         action = webdriver.common.action_chains.ActionChains(driver)
-        action.move_by_offset(867.59375, 354.140625)
+        action.move_by_offset(970, 771)
         action.click()
         action.perform()
         time.sleep(5)
