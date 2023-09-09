@@ -3,6 +3,11 @@ import os
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.actions.action_builder import ActionBuilder
+from typing import Final
+
+site_name: Final = "https://deepstatemap.live/"
+sn: Final = "https://wikipedia.com/wiki/Main_Page"
 
 class Fnxn:
     """class to show percent of UA land occupied by RU"""    
@@ -12,9 +17,11 @@ class Fnxn:
         #options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--auto-open-devtools-for-tabs')
+        #options.add_argument('--kiosk')
         service = Service(executable_path=r'chromedriver-linux64/chromedriver')
         driver = webdriver.Chrome(service=service, options=options)
-        driver.get("https://deepstatemap.live/")
+        driver.get(sn)
         return driver
 
     def popups(self, driver):
@@ -30,6 +37,8 @@ class Fnxn:
             driver.implicitly_wait(3)  # wait until element loads (timeout 3 seconds)
         except Exception:
             print('No element found.  Skipping')
+            
+        driver.maximize_window()
         return driver
 
     def donetsk_ot(self, driver) -> str:
@@ -92,3 +101,32 @@ class Fnxn:
         action.perform()
         time.sleep(1)
         return zaporozye_ot
+    
+    def mbo(self,driver) -> str:
+        """"Learn selenium mbo function"""
+        
+        #Move by offset
+        action = webdriver.common.action_chains.ActionChains(driver)
+        action.move_by_offset(867.59375, 354.140625)
+        action.click()
+        action.perform()
+        time.sleep(5)
+        # action = ActionBuilder(driver)
+        # action.pointer_action.move_to_location(8, 0)
+        # action.perform()
+        # time.sleep(5)
+
+        #Get size, should be standard
+        # ot3_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
+        # zaporozye_ot = ot3_size.text
+        # print(f"Zaporozye OT: {zaporozye_ot}")
+        # time.sleep(1)
+        
+        # #Close it, should be standard
+        # #close it!
+        # close_3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
+        # action.move_to_element_with_offset(close_3, 0, 0)
+        # action.click()
+        # action.perform()
+        # time.sleep(1)
+        return "hi"
