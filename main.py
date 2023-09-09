@@ -45,4 +45,5 @@ today = date.today()
 print("Note this does not include the autonomous republic of crimea")
 print("Percent Occupied: " + str(percent_occupied) + "% as of " + str(today))
 
+
 time.sleep(10)

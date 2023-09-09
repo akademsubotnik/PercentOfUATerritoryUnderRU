@@ -43,36 +43,52 @@ class Fnxn:
 
     def donetsk_ot(self, driver) -> str:
         """"Get OT for Donetsk Region"""
-        #Gets occupied territory Donetsk 1
-        ot1=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[151]")#Donetsk city
+        
+        #Move by offset
         action = webdriver.common.action_chains.ActionChains(driver)
-        action.move_to_element_with_offset(ot1, 20, 0)
+        action.move_by_offset(1114, 600)
         action.click()
         action.perform()
+        
+        #Get size, should be standard
         ot1_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
         donetsk_ot = ot1_size.text
         print(f"Donetsk OT: {donetsk_ot}")
         time.sleep(1)
+        
+        #Close it, should be standard
         #close it!
         close_1=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
         action.move_to_element_with_offset(close_1, 0, 0)
         action.click()
         action.perform()
         time.sleep(1)
+        
+        
+        # #Reset offset
+        # action = webdriver.common.action_chains.ActionChains(driver)
+        # action.move_by_offset(-1114, -600)
+        # action.perform()
+        
         return donetsk_ot
 
     def lugansk_ot(self, driver) -> str:
         """"Get OT for Lugansk Region"""
-        #Gets occupied territory Lugansk 1
-        ot2=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[82]")#(staroblisk lugansk)
+        
+        #Move by offset
         action = webdriver.common.action_chains.ActionChains(driver)
-        action.move_to_element_with_offset(ot2, 0, 20)
+        action.move_by_offset(-107,-297)      #1007,303
         action.click()
         action.perform()
+        time.sleep(5)
+        
+        #Get size, should be standard
         ot2_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
         lugansk_ot = ot2_size.text
         print(f"Lugansk OT: {lugansk_ot}")
         time.sleep(1)
+        
+        #Close it, should be standard
         #close it!
         close_2=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
         action.move_to_element_with_offset(close_2, 0, 0)
@@ -83,27 +99,6 @@ class Fnxn:
 
     def zaporozye_ot(self, driver) -> str:
         """"Get OT for Zaporozye Region"""
-        #Gets occupied territory Zaporozye 1
-        ot3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[165]")#melitopol(Zaporozye)
-        #/html/body/div[9]/div[1]/div[4]/img[169]
-        action = webdriver.common.action_chains.ActionChains(driver)
-        action.move_to_element_with_offset(ot3, 20, 0)
-        action.click()
-        action.perform()
-        ot3_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
-        zaporozye_ot = ot3_size.text
-        print(f"Zaporozye OT: {zaporozye_ot}")
-        time.sleep(1)
-        #close it!
-        close_3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
-        action.move_to_element_with_offset(close_3, 0, 0)
-        action.click()
-        action.perform()
-        time.sleep(1)
-        return zaporozye_ot
-    
-    def mbo(self,driver) -> str:
-        """"Learn selenium mbo function"""
         
         #Move by offset
         action = webdriver.common.action_chains.ActionChains(driver)
@@ -111,22 +106,18 @@ class Fnxn:
         action.click()
         action.perform()
         time.sleep(5)
-        # action = ActionBuilder(driver)
-        # action.pointer_action.move_to_location(8, 0)
-        # action.perform()
-        # time.sleep(5)
 
         #Get size, should be standard
-        # ot3_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
-        # zaporozye_ot = ot3_size.text
-        # print(f"Zaporozye OT: {zaporozye_ot}")
-        # time.sleep(1)
+        ot3_size = driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/div[1]/div/i")
+        zaporozye_ot = ot3_size.text
+        print(f"Zaporozye OT: {zaporozye_ot}")
+        time.sleep(1)
         
-        # #Close it, should be standard
-        # #close it!
-        # close_3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
-        # action.move_to_element_with_offset(close_3, 0, 0)
-        # action.click()
-        # action.perform()
-        # time.sleep(1)
-        return "hi"
+        #Close it, should be standard
+        #close it!
+        close_3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[6]/div/a")
+        action.move_to_element_with_offset(close_3, 0, 0)
+        action.click()
+        action.perform()
+        time.sleep(1)
+        return zaporozye_ot
