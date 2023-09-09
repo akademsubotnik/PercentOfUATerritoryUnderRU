@@ -1,6 +1,8 @@
 """main.py"""
 import time
 from typing import Final
+from datetime import date
+
 
 #Selenium Imports
 #from selenium import webdriver
@@ -39,6 +41,8 @@ total_occupied = float(donot[1]) + float(logot[1]) + float(zapot[1])
 #print(total_occupied)
 
 percent_occupied = (total_occupied / TOTAL_SIZE) * 100
-print("Percent Occupied: " + str(percent_occupied) + "%")
+today = date.today()
+print("Note this does not include the autonomous republic of crimea")
+print("Percent Occupied: " + str(percent_occupied) + "% as of " + str(today))
 
 time.sleep(10)

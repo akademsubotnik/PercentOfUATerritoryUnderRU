@@ -9,7 +9,7 @@ class Fnxn:
     def setup(self):
         """function to create webdriver"""
         options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
+        #options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         service = Service(executable_path=r'chromedriver-linux64/chromedriver')
@@ -55,7 +55,7 @@ class Fnxn:
     def lugansk_ot(self, driver) -> str:
         """"Get OT for Lugansk Region"""
         #Gets occupied territory Lugansk 1
-        ot2=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[84]")#starobilsk(Lugansk)
+        ot2=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[82]")#(staroblisk lugansk)
         action = webdriver.common.action_chains.ActionChains(driver)
         action.move_to_element_with_offset(ot2, 0, 20)
         action.click()
@@ -75,7 +75,8 @@ class Fnxn:
     def zaporozye_ot(self, driver) -> str:
         """"Get OT for Zaporozye Region"""
         #Gets occupied territory Zaporozye 1
-        ot3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[169]")#melitopol(Zaporozye)
+        ot3=driver.find_element("xpath","/html/body/div[9]/div[1]/div[4]/img[165]")#melitopol(Zaporozye)
+        #/html/body/div[9]/div[1]/div[4]/img[169]
         action = webdriver.common.action_chains.ActionChains(driver)
         action.move_to_element_with_offset(ot3, 20, 0)
         action.click()
